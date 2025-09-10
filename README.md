@@ -1,4 +1,3 @@
-# medieval
 # Projet Médiéval
 
 Bienvenue dans mon projet au style médiéval !
