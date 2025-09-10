@@ -1,58 +1,410 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Mes Œuvres Littéraires</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Nom - Auteur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="bandeau">
-      <h1>Le Royaume des Lettres</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="mes livres.html">Mes Livres</a></li>
-          <li><a href="#personnages">Personnages</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <section id="intro">
-      <h2>Bienvenue sur mon site d’auteur</h2>
-      <p>Découvrez mes romans, nouvelles et l'univers de mes personnages inspirés par la légende et la fiction.</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Votre Nom</h2>
+                <span>Auteur</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+                <li><a href="#oeuvres" class="nav-link">Mes Œuvres</a></li>
+                <li><a href="#extraits" class="nav-link">Extraits</a></li>
+                <li><a href="#personnages" class="nav-link">Personnages</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page d'accueil -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Bienvenue dans mon univers littéraire
+                </h1>
+                <p class="hero-subtitle">
+                    Auteur passionné de romans et nouvelles, je vous invite à découvrir mes histoires où se mêlent mystère, émotion et aventure.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#oeuvres" class="btn btn-primary">Découvrir mes œuvres</a>
+                    <a href="#extraits" class="btn btn-secondary">Lire des extraits</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="author-photo">
+                    <img src="https://via.placeholder.com/400x400/667eea/white?text=Votre+Photo" alt="Photo de l'auteur">
+                </div>
+                <div class="floating-elements">
+                    <div class="floating-book">📖</div>
+                    <div class="floating-pen">✒️</div>
+                    <div class="floating-star">⭐</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-stats">
+            <div class="stat">
+                <h3>5</h3>
+                <p>Œuvres publiées</p>
+            </div>
+            <div class="stat">
+                <h3>12k+</h3>
+                <p>Lecteurs conquis</p>
+            </div>
+            <div class="stat">
+                <h3>3</h3>
+                <p>Projets en cours</p>
+            </div>
+        </div>
     </section>
-    <section id="oeuvres">
-      <h2>Mes Œuvres</h2>
-      <div class="oeuvre-list">
-        <article>
-          <h3>La Quête du Graal</h3>
-          <p>Un roman d’aventure médiévale où magie et bravoure se rencontrent.</p>
-        </article>
-        <article>
-          <h3>Le Roi et l’Épée</h3>
-          <p>Nouvelle relatant la destinée d’un roi légendaire et de son épée sacrée.</p>
-        </article>
-        <!-- Ajoute d'autres œuvres ici -->
-      </div>
+
+    <!-- Section Mes Œuvres -->
+    <section id="oeuvres" class="works-section">
+        <div class="container">
+            <h2 class="section-title">Mes Œuvres</h2>
+            <p class="section-subtitle">Découvrez mes histoires, plongez dans mes univers</p>
+            
+            <div class="works-grid">
+                <!-- Roman en cours -->
+                <div class="work-card">
+                    <div class="work-cover">
+                        <img src="https://via.placeholder.com/300x400/4ecdc4/white?text=Roman" alt="Couverture - Les Ombres du Temps">
+                    </div>
+                    
+                    <div class="work-info">
+                        <span class="work-type novel">Roman</span>
+                        <span class="status in-progress">En cours</span>
+                        
+                        <h3 class="work-title">Les Ombres du Temps</h3>
+                        <p class="work-description">
+                            Une saga épique qui mêle fantastique et réalité, où un jeune archéologue découvre que certains objets anciens peuvent modifier le cours du temps.
+                        </p>
+                        
+                        <div class="work-stats">
+                            <span>📝 45,000 / 80,000 mots</span>
+                            <span>📅 Début: Mars 2024</span>
+                        </div>
+                        
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 56%"></div>
+                        </div>
+                        
+                        <button class="read-btn" disabled>Bientôt disponible</button>
+                    </div>
+                </div>
+
+                <!-- Nouvelles -->
+                <div class="work-card">
+                    <div class="work-cover">
+                        <img src="https://via.placeholder.com/300x400/45b7d1/white?text=Nouvelle" alt="Couverture - Le Dernier Train">
+                    </div>
+                    
+                    <div class="work-info">
+                        <span class="work-type short-story">Nouvelle</span>
+                        <span class="status published">Publié</span>
+                        
+                        <h3 class="work-title">Le Dernier Train</h3>
+                        <p class="work-description">
+                            Dans une gare abandonnée, Clara attend un train qui ne viendra peut-être jamais. Une réflexion poétique sur l'attente et l'espoir.
+                        </p>
+                        
+                        <div class="work-stats">
+                            <span>📝 3,500 mots</span>
+                            <span>⭐ Genre: Drame</span>
+                        </div>
+                        
+                        <button class="read-btn">Lire maintenant</button>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-cover">
+                        <img src="https://via.placeholder.com/300x400/ff6b6b/white?text=Fantastique" alt="Couverture - Conversations Nocturnes">
+                    </div>
+                    
+                    <div class="work-info">
+                        <span class="work-type short-story">Nouvelle</span>
+                        <span class="status published">Publié</span>
+                        
+                        <h3 class="work-title">Conversations Nocturnes</h3>
+                        <p class="work-description">
+                            Quand Sophie découvre qu'elle peut communiquer avec les objets de sa maison la nuit, sa vision du monde change à jamais.
+                        </p>
+                        
+                        <div class="work-stats">
+                            <span>📝 2,800 mots</span>
+                            <span>⭐ Genre: Fantastique</span>
+                        </div>
+                        
+                        <button class="read-btn">Lire maintenant</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="personnages">
-      <h2>Personnages principaux</h2>
-      <ul>
-        <li><a href="personnages/arthur.html">Arthur Pendragon</a></li>
-        <li><a href="personnages/merlin.html">Merlin</a></li>
-        <!-- Ajoute d'autres personnages ici -->
-      </ul>
+
+    <!-- Section Extraits -->
+    <section id="extraits" class="excerpts-section">
+        <div class="container">
+            <h2 class="section-title">Extraits Exclusifs</h2>
+            <p class="section-subtitle">Des passages inédits, disponibles uniquement pour mes lecteurs</p>
+            
+            <div class="excerpts-container">
+                <div class="exclusive-badge">✨ EXCLUSIF</div>
+                
+                <div class="excerpt-selector">
+                    <button class="excerpt-btn active" onclick="showExcerpt('roman')">Roman en cours</button>
+                    <button class="excerpt-btn" onclick="showExcerpt('nouvelle1')">Nouvelle mystère</button>
+                    <button class="excerpt-btn" onclick="showExcerpt('nouvelle2')">Histoire d'amour</button>
+                </div>
+
+                <div class="excerpt-content active" id="roman">
+                    <div class="excerpt-header">
+                        <h3 class="excerpt-title">Les Ombres du Temps</h3>
+                        <p class="excerpt-info">Extrait du chapitre 3 - Jamais publié ailleurs</p>
+                    </div>
+                    
+                    <div class="excerpt-text">
+                        L'objet brillait d'une lueur étrange dans la pénombre de la cave. Sarah tendit la main, hésitante. Dès que ses doigts effleurèrent la surface froide du médaillon, le monde autour d'elle se mit à osciller. Les murs de pierre semblèrent se dissoudre, remplacés par une forêt luxuriante qu'elle n'avait jamais vue auparavant.
+                    </div>
+                    
+                    <div class="excerpt-footer">
+                        <div class="excerpt-stats">📊 Extrait de 150 mots | 🔥 Lu par 1,247 personnes</div>
+                        <a href="#" class="read-more-btn">Lire l'histoire complète</a>
+                    </div>
+                </div>
+
+                <div class="excerpt-content" id="nouvelle1">
+                    <div class="excerpt-header">
+                        <h3 class="excerpt-title">Le Miroir de Minuit</h3>
+                        <p class="excerpt-info">Nouvelle inédite - Premier aperçu exclusif</p>
+                    </div>
+                    
+                    <div class="excerpt-text">
+                        Chaque nuit à minuit précis, le miroir de ma grand-mère se mettait à briller. Au début, j'ai cru à un reflet de la lune, mais il n'y avait pas de fenêtre dans cette direction. Et puis j'ai commencé à voir des formes bouger à l'intérieur du verre...
+                    </div>
+                    
+                    <div class="excerpt-footer">
+                        <div class="excerpt-stats">📊 Extrait de 120 mots | 👻 Genre : Fantastique</div>
+                        <a href="#" class="read-more-btn">Découvrir la suite</a>
+                    </div>
+                </div>
+
+                <div class="excerpt-content" id="nouvelle2">
+                    <div class="excerpt-header">
+                        <h3 class="excerpt-title">Lettres à l'Inconnue</h3>
+                        <p class="excerpt-info">Romance contemporaine - Avant-première</p>
+                    </div>
+                    
+                    <div class="excerpt-text">
+                        "Chère inconnue du café, Cela fait trois semaines que je vous observe de loin, toujours à la même table, toujours avec le même livre que vous ne semblez jamais finir. Aujourd'hui, j'ai trouvé le courage de vous écrire cette lettre..."
+                    </div>
+                    
+                    <div class="excerpt-footer">
+                        <div class="excerpt-stats">📊 Extrait de 95 mots | 💕 Genre : Romance</div>
+                        <a href="#" class="read-more-btn">Lire la lettre complète</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Tu peux me contacter à <a href="mailto:monemail@example.com">monemail@example.com</a> ou via <a href="https://github.com/JillianHT-web">GitHub</a>.</p>
+
+    <!-- Section Personnages -->
+    <section id="personnages" class="characters-section">
+        <div class="container">
+            <h2 class="section-title">Mes Personnages</h2>
+            <p class="section-subtitle">Rencontrez les héros et héroïnes de mes histoires</p>
+            
+            <div class="characters-grid">
+                <div class="character-card">
+                    <div class="character-image">
+                        <img src="https://via.placeholder.com/250x300/667eea/white?text=Sarah" alt="Sarah">
+                    </div>
+                    <div class="character-info">
+                        <h3>Sarah Chen</h3>
+                        <p class="character-role">Archéologue - Les Ombres du Temps</p>
+                        <p class="character-description">
+                            Brillante mais impulsive, Sarah découvre un artefact qui bouleverse sa vision du monde. Sa curiosité insatiable la mène vers des aventures qu'elle n'aurait jamais imaginées.
+                        </p>
+                        <div class="character-traits">
+                            <span>Courageuse</span>
+                            <span>Curieuse</span>
+                            <span>Déterminée</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="character-card">
+                    <div class="character-image">
+                        <img src="https://via.placeholder.com/250x300/4ecdc4/white?text=Clara" alt="Clara">
+                    </div>
+                    <div class="character-info">
+                        <h3>Clara Moreau</h3>
+                        <p class="character-role">Voyageuse - Le Dernier Train</p>
+                        <p class="character-description">
+                            Une femme à la croisée des chemins, Clara attend dans une gare abandonnée. Son histoire est celle de tous ceux qui ont dû faire des choix difficiles.
+                        </p>
+                        <div class="character-traits">
+                            <span>Mélancolique</span>
+                            <span>Rêveuse</span>
+                            <span>Résiliente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="character-card">
+                    <div class="character-image">
+                        <img src="https://via.placeholder.com/250x300/ff6b6b/white?text=Sophie" alt="Sophie">
+                    </div>
+                    <div class="character-info">
+                        <h3>Sophie Laurent</h3>
+                        <p class="character-role">Étudiante - Conversations Nocturnes</p>
+                        <p class="character-description">
+                            Solitaire par nature, Sophie découvre qu'elle peut communiquer avec les objets. Cette révélation transforme sa solitude en une aventure extraordinaire.
+                        </p>
+                        <div class="character-traits">
+                            <span>Introvertie</span>
+                            <span>Sensible</span>
+                            <span>Imaginative</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 JillianHT-web — Tous droits réservés.</p>
-  </footer>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Restons en Contact</h2>
+            <p class="section-subtitle">N'hésitez pas à me contacter pour échanger sur mes œuvres ou vos suggestions</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>votre.email@example.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🐦</div>
+                        <div>
+                            <h4>Twitter</h4>
+                            <p>@VotreNom</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📚</div>
+                        <div>
+                            <h4>Blog</h4>
+                            <p>votreblog.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-signup">
+                        <h4>Newsletter</h4>
+                        <p>Recevez mes nouvelles publications et extraits exclusifs</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Votre email" id="newsletterEmail">
+                            <button onclick="subscribe()">S'abonner</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <select id="subject">
+                                <option>Question générale</option>
+                                <option>Commentaire sur une œuvre</option>
+                                <option>Suggestion d'histoire</option>
+                                <option>Collaboration</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Votre Nom</h4>
+                    <p>Auteur passionné créant des histoires qui touchent le cœur et éveillent l'imagination.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#oeuvres">Mes Œuvres</a></li>
+                        <li><a href="#extraits">Extraits</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Suivez-moi</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Goodreads">📖</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Votre Nom. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
