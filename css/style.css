@@ -1,248 +1,173 @@
 /* General Body Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    /* Mettre à jour le dégradé de fond du corps */
+    background: linear-gradient(135deg, #0f1c2c 0%, #3e6d97 100%);
+    /* Mettre à jour la couleur du texte (bleu très clair) */
+    color: #f0f8ff; 
+    min-height: 100vh;
     font-family: 'Georgia', 'Times New Roman', serif;
     line-height: 1.6;
-    background: linear-gradient(135deg, #2c1810 0%, #4a3728 100%);
-    color: #f4f1e8;
-    min-height: 100vh;
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #1a0f0a 0%, #2c1810 100%);
-    color: #d4af37;
+    /* Mettre à jour le dégradé de fond du header */
+    background: linear-gradient(135deg, #09121a 0%, #0f1c2c 100%);
+    /* Mettre à jour la couleur d'accentuation (jaune clair) */
+    color: #fffacd; 
     padding: 2rem 0;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    border-bottom: 3px solid #d4af37;
+    /* Mettre à jour la bordure */
+    border-bottom: 3px solid #fffacd;
+}
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #09121a 0%, #0f1c2c 100%);
+    color: #fffacd;
+    padding: 2rem 0;
+    /* On retire le text-align: center; du header principal */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #fffacd;
+    
+    /* NOUVELLES PROPRIÉTÉS pour la mise en page */
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Organise les éléments verticalement (Photo puis Titre) */
+    align-items: center; /* Centre horizontalement les éléments */
 }
 
 header h1 {
-    margin: 0;
+    margin: 10px 0 0; /* Ajoute un peu de marge au-dessus du titre après la photo */
     font-size: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     letter-spacing: 2px;
 }
 
+/* --- NOUVEAU STYLE POUR VOTRE PHOTO --- */
+.profile-photo {
+    width: 150px; /* Taille de la photo */
+    height: 150px;
+    border-radius: 50%; /* Rend la photo ronde */
+    object-fit: cover; /* Assure que l'image couvre bien le cercle */
+    border: 5px solid #fffacd; /* Bordure d'accentuation jaune clair */
+    box-shadow: 0 0 20px rgba(255, 250, 205, 0.5); /* Effet lumineux autour de la photo */
+    margin-bottom: 10px;
+}
 /* Navigation Bar Styles */
-nav {
-    margin-top: 1rem;
-}
-
-nav ul {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
 nav ul li a {
-    color: #f4f1e8;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 2px solid transparent;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    /* Mettre à jour la couleur de base du lien (bleu très clair) */
+    color: #f0f8ff; 
+    /* ... autres propriétés ... */
 }
 
 nav ul li a:hover {
-    color: #d4af37;
-    border-color: #d4af37;
-    background: rgba(212, 175, 55, 0.1);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    /* Mettre à jour la couleur de survol (jaune clair) */
+    color: #fffacd; 
+    /* Mettre à jour la couleur de la bordure et de l'ombre */
+    border-color: #fffacd;
+    background: rgba(255, 250, 205, 0.1); /* Utilisation d'un RGBA de la nouvelle couleur */
+    box-shadow: 0 4px 15px rgba(255, 250, 205, 0.3);
 }
 
 /* Main Content Area */
 main {
-    padding: 40px 20px;
-    margin: 0 auto;
-    max-width: 1200px;
-    background: rgba(244, 241, 232, 0.05);
-    border-radius: 15px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    /* Mettre à jour la transparence du fond */
+    background: rgba(240, 248, 255, 0.05); 
+    /* ... autres propriétés ... */
 }
 
 section {
-    margin-bottom: 30px;
-    padding: 30px;
-    background: linear-gradient(135deg, rgba(244, 241, 232, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-    border-radius: 15px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Mettre à jour le dégradé de fond des sections */
+    background: linear-gradient(135deg, rgba(240, 248, 255, 0.1) 0%, rgba(255, 250, 205, 0.05) 100%);
+    /* Mettre à jour la couleur de la bordure */
+    border: 1px solid rgba(255, 250, 205, 0.2); 
+    /* ... autres propriétés ... */
 }
 
 section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
+    /* Mettre à jour la couleur de l'ombre au survol */
+    box-shadow: 0 8px 30px rgba(255, 250, 205, 0.2); 
 }
 
 section h2 {
-    color: #d4af37;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    border-bottom: 2px solid #d4af37;
-    padding-bottom: 10px;
-}
-
-section p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-align: justify;
+    /* Mettre à jour la couleur d'accentuation (jaune clair) */
+    color: #fffacd;
+    /* Mettre à jour la bordure inférieure */
+    border-bottom: 2px solid #fffacd;
+    /* ... autres propriétés ... */
 }
 
 /* Hero Section */
 #hero {
-    text-align: center;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(244, 241, 232, 0.05) 100%);
-    border: 2px solid #d4af37;
-}
-
-#hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    border: none;
+    /* Mettre à jour le dégradé de fond */
+    background: linear-gradient(135deg, rgba(255, 250, 205, 0.1) 0%, rgba(240, 248, 255, 0.05) 100%); 
+    /* Mettre à jour la bordure */
+    border: 2px solid #fffacd;
 }
 
 /* Footer Styles */
 footer {
-    text-align: center;
-    padding: 30px 20px;
-    background: linear-gradient(135deg, #1a0f0a 0%, #2c1810 100%);
-    color: #d4af37;
-    border-top: 3px solid #d4af37;
-    margin-top: 50px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    nav ul li {
-        margin: 5px 0;
-    }
-    
-    main {
-        margin: 20px 10px;
-        padding: 20px;
-    }
-    
-    section {
-        padding: 20px;
-    }
-    
-    section h2 {
-        font-size: 1.5rem;
-    }
-}
-
-/* Character Cards (for personnages page) */
-.character-card {
-    background: linear-gradient(135deg, rgba(244, 241, 232, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0;
-    transition: all 0.3s ease;
-}
-
-.character-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.2);
-}
-
-/* Book Cards (for livres page) */
-.book-card {
-    display: flex;
-    background: linear-gradient(135deg, rgba(244, 241, 232, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0;
-    transition: all 0.3s ease;
-}
-
-.book-card:hover {
-    transform: translateX(10px);
-    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.2);
+    /* Mettre à jour le dégradé de fond */
+    background: linear-gradient(135deg, #09121a 0%, #0f1c2c 100%);
+    /* Mettre à jour la couleur du texte (jaune clair) */
+    color: #fffacd; 
+    /* Mettre à jour la bordure supérieure */
+    border-top: 3px solid #fffacd;
+    /* ... autres propriétés ... */
 }
 
 /* Contact Form Styles */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
 .form-group label {
-    display: block;
-    color: #d4af37;
-    margin-bottom: 5px;
-    font-weight: bold;
+    /* Mettre à jour la couleur d'accentuation (jaune clair) */
+    color: #fffacd; 
+    /* ... autres propriétés ... */
 }
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid rgba(212, 175, 55, 0.3);
-    border-radius: 8px;
-    background: rgba(244, 241, 232, 0.1);
-    color: #f4f1e8;
-    font-family: inherit;
+    /* Mettre à jour la couleur de la bordure */
+    border: 2px solid rgba(255, 250, 205, 0.3); 
+    /* ... autres propriétés ... */
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    outline: none;
-    border-color: #d4af37;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    /* Mettre à jour la couleur de la bordure et de l'ombre au focus */
+    border-color: #fffacd;
+    box-shadow: 0 0 10px rgba(255, 250, 205, 0.3);
 }
 
 .btn-submit {
-    background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
-    color: #1a0f0a;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    /* Mettre à jour le dégradé du bouton d'envoi */
+    background: linear-gradient(135deg, #fffacd 0%, #e0e0b8 100%);
+    /* Mettre à jour la couleur du texte (bleu foncé pour le contraste) */
+    color: #0f1c2c; 
+    /* ... autres propriétés ... */
 }
 
 .btn-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    /* Mettre à jour l'ombre au survol */
+    box-shadow: 0 6px 20px rgba(255, 250, 205, 0.4);
+}
+/* Conteneur pour les cartes de personnages */
+.characters-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne si l'écran est trop petit */
+    gap: 20px; /* Espace entre les cartes */
+    justify-content: space-around; /* Centre les cartes horizontalement */
 }
 
+.character-card {
+    /* Permet à la carte d'occuper environ la moitié de la largeur, moins l'espace */
+    flex: 1 1 calc(50% - 10px); 
+    max-width: calc(50% - 10px); /* Limite à 50% de la largeur du conteneur parent */
+    /* Assurez-vous d'ajouter une media query si vous voulez qu'elles redeviennent une par une sur mobile */
+}
+
+/* Réponse pour les petits écrans */
+@media (max-width: 600px) {
+    .character-card {
+        flex: 1 1 100%;
+        max-width: 100%; /* Reprend toute la largeur sur mobile */
+    }
+}
