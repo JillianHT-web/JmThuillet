@@ -1,0 +1,13 @@
+title: "Wiki Médiéval de JillianHT"
+description: "Chroniques d'un monde médiéval-fantastique"
+theme: minima
+
+# Navigation
+header_pages:
+  - personnages.md
+  - lieux.md
+  - chronologie.md
+
+# Configuration
+markdown: kramdown
+highlighter: rouge
