@@ -3,499 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extraits Exclusifs</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #9b59b6 100%);
-            min-height: 100vh;
-            padding: 20px;
-            position: relative;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            color: white;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .excerpts-container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .excerpt-selector {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .excerpt-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .excerpt-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .excerpt-btn.active {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            transform: scale(1.05);
-        }
-
-        .excerpt-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            transform: translate(-50%, -50%);
-        }
-
-        .excerpt-btn:hover::before {
-            width: 100%;
-            height: 100%;
-        }
-
-        .excerpt-content {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .excerpt-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .excerpt-header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #f1c40f;
-        }
-
-        .excerpt-title {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .excerpt-info {
-            color: #7f8c8d;
-            font-style: italic;
-        }
-
-        .excerpt-text {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid #3498db;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #2c3e50;
-            position: relative;
-            margin-bottom: 25px;
-        }
-
-        .excerpt-text::before {
-            content: '"';
-            font-size: 4rem;
-            color: #bdc3c7;
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            font-family: serif;
-        }
-
-        .excerpt-text::after {
-            content: '"';
-            font-size: 4rem;
-            color: #bdc3c7;
-            position: absolute;
-            bottom: -30px;
-            right: 20px;
-            font-family: serif;
-        }
-
-        .excerpt-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #74b9ff, #0984e3);
-            border-radius: 15px;
-            color: white;
-        }
-
-        .excerpt-stats {
-            font-size: 0.9rem;
-        }
-
-        .read-more-btn {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: 2px solid white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .read-more-btn:hover {
-            background: white;
-            color: #0984e3;
-            transform: scale(1.05);
-        }
-
-        .exclusive-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #e74c3c;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .teaser-section {
-            margin-top: 30px;
-            text-align: center;
-            padding: 25px;
-            background: linear-gradient(135deg, #fd79a8, #fdcb6e);
-            border-radius: 15px;
-            color: white;
-        }
-
-        .teaser-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .newsletter-signup {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .newsletter-input {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            min-width: 250px;
-            outline: none;
-        }
-
-        .newsletter-btn {
-            background: #e74c3c;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-btn:hover {
-            background: #c0392b;
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .excerpts-container {
-                padding: 20px;
-            }
-            
-            .excerpt-selector {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .excerpt-btn {
-                width: 200px;
-            }
-            
-            .newsletter-input {
-                min-width: 200px;
-            }
-        }
-
-        .typing-effect {
-            border-right: 3px solid #3498db;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% { border-color: #3498db; }
-            51%, 100% { border-color: transparent; }
-        }
-    </style>
+    <title>Extraits - Univers Littéraire Médiéval</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
-    <div class="bandeau">
-      <h1>Le Royaume des Lettres</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="mes livres.html">Mes Livres</a></li>
-          <li><a href="#personnages">Personnages</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-    <div class="container">
-        <div class="header">
-            <h1>📖 Extraits Exclusifs</h1>
-            <p>Découvrez des passages inédits de mes œuvres, disponibles uniquement pour mes lecteurs fidèles</p>
-        </div>
+        <h1>Extraits Littéraires</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="personnages.html">Personnages</a></li>
+                <li><a href="extraits.html">Extraits</a></li>
+                <li><a href="livres.html">Livres</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="excerpts-container">
-            <div class="exclusive-badge">✨ EXCLUSIF</div>
-            
-            <div class="excerpt-selector">
-                <button class="excerpt-btn active" onclick="showExcerpt('roman')">Roman en cours</button>
-                <button class="excerpt-btn" onclick="showExcerpt('nouvelle1')">Nouvelle mystère</button>
-                <button class="excerpt-btn" onclick="showExcerpt('nouvelle2')">Histoire d'amour</button>
-            </div>
+    <main>
+        <section>
+            <h2>Passages Choisis de mes Œuvres</h2>
+            <p>Découvrez des extraits soigneusement sélectionnés qui vous donneront un aperçu de mon style narratif et de l'atmosphère de mes récits médiévaux. Ces passages vous transporteront dans un monde où se mêlent réalisme historique et merveilleux.</p>
+        </section>
 
-            <!-- Extrait Roman -->
-            <div class="excerpt-content active" id="roman">
-                <div class="excerpt-header">
-                    <h2 class="excerpt-title">Les Ombres du Temps</h2>
-                    <p class="excerpt-info">Extrait du chapitre 3 - Jamais publié ailleurs</p>
-                </div>
-                
-                <div class="excerpt-text">
-                    L'objet brillait d'une lueur étrange dans la pénombre de la cave. Sarah tendit la main, hésitante. Dès que ses doigts effleurèrent la surface froide du médaillon, le monde autour d'elle se mit à osciller. Les murs de pierre semblèrent se dissoudre, remplacés par une forêt luxuriante qu'elle n'avait jamais vue auparavant.
+        <section>
+            <h2>Extrait 1 : "La Prophétie de Montclair"</h2>
+            <p><em>Chapitre III - L'Éveil du Destin</em></p>
+            <blockquote style="font-style: italic; border-left: 4px solid #d4af37; padding-left: 20px; margin: 20px 0;">
+                "Les premières lueurs de l'aube perçaient à travers les vitraux colorés de la chapelle, projetant des reflets dorés sur les dalles de pierre usées par des siècles de prières. Sir Aldric s'agenouilla devant l'autel, son épée posée en travers de ses genoux, et sentit une étrange chaleur émaner de la lame ancienne. Les runes gravées dans l'acier semblaient pulser d'une lumière propre, comme si elles répondaient à l'appel silencieux de son cœur. 'Père', murmura-t-il à l'adresse du crucifix de bois sculpté, 'guidez mes pas sur le chemin de la justice.' Un souffle mystérieux traversa la nef, faisant vaciller les cierges, et dans ce silence sacré, Aldric comprit que son destin venait de basculer à jamais."
+            </blockquote>
+        </section>
 
-                    "Où suis-je ?" murmura-t-elle, sa voix résonnant étrangement dans cet espace impossible. Au loin, elle apercevait une silhouette qui lui faisait signe. Une silhouette qui ressemblait troublant à...
-                </div>
-                
-                <div class="excerpt-footer">
-                    <div class="excerpt-stats">
-                        📊 Extrait de 150 mots | 🔥 Lu par 1,247 personnes
-                    </div>
-                    <a href="#" class="read-more-btn">Lire l'histoire complète</a>
-                </div>
-            </div>
+        <section>
+            <h2>Extrait 2 : "Les Grimoires de Ravenshollow"</h2>
+            <p><em>Chapitre VII - Le Sanctuaire Secret</em></p>
+            <blockquote style="font-style: italic; border-left: 4px solid #d4af37; padding-left: 20px; margin: 20px 0;">
+                "Dame Éléonore descendit les marches de pierre qui menaient à sa bibliothèque secrète, sa chandelle projetant des ombres dansantes sur les murs couverts de symboles anciens. L'air était chargé d'une énergie palpable, celle des connaissances oubliées et des sorts endormis. Ses doigts effleurèrent la reliure de cuir d'un grimoire millénaire, et aussitôt, les pages s'ouvrirent d'elles-mêmes, révélant des caractères luminescents qui semblaient écrits avec de la lumière pure. 'Les secrets de la guérison par les plantes lunaires', lut-elle à voix basse, tandis qu'Ombre, son fidèle corbeau, croassait doucement depuis son perchoir, comme pour l'encourager dans sa quête de savoir."
+            </blockquote>
+        </section>
 
-            <!-- Extrait Nouvelle 1 -->
-            <div class="excerpt-content" id="nouvelle1">
-                <div class="excerpt-header">
-                    <h2 class="excerpt-title">Le Miroir de Minuit</h2>
-                    <p class="excerpt-info">Nouvelle inédite - Premier aperçu exclusif</p>
-                </div>
-                
-                <div class="excerpt-text">
-                    Chaque nuit à minuit précis, le miroir de ma grand-mère se mettait à briller. Au début, j'ai cru à un reflet de la lune, mais il n'y avait pas de fenêtre dans cette direction. Et puis j'ai commencé à voir des formes bouger à l'intérieur du verre...
+        <section>
+            <h2>Extrait 3 : "L'Ombre de Gorvain"</h2>
+            <p><em>Chapitre XII - La Confrontation</em></p>
+            <blockquote style="font-style: italic; border-left: 4px solid #d4af37; padding-left: 20px; margin: 20px 0;">
+                "Le tonnerre grondait au-dessus du château en ruines où Maître Gorvain avait établi son repaire. Les éclairs zébraient le ciel d'encre, illuminant par intermittence la silhouette menaçante du sorcier déchu. Son rire résonnait dans la nuit comme un glas funèbre, et les morts-vivants qu'il avait invoqués formaient une armée silencieuse autour de lui. 'Tu es venu mourir, jeune fou ?' cracha-t-il à l'adresse d'Aldric qui se dressait face à lui, l'épée enchantée brillant d'une lumière blanche. 'Non', répondit le chevalier d'une voix ferme, 'je suis venu vous ramener vers la lumière, ou vous détruire si vous refusez la rédemption.' Le combat final pouvait commencer."
+            </blockquote>
+        </section>
 
-                    Cette nuit-là, j'ai décidé de rester éveillée pour observer. À 23h59, j'ai retenu ma respiration. Et là, dans le miroir, j'ai vu un visage que je connaissais bien, mais qui n'aurait jamais dû être là.
-                </div>
-                
-                <div class="excerpt-footer">
-                    <div class="excerpt-stats">
-                        📊 Extrait de 120 mots | 👻 Genre : Fantastique
-                    </div>
-                    <a href="#" class="read-more-btn">Découvrir la suite</a>
-                </div>
-            </div>
+        <section>
+            <h2>Style et Influences</h2>
+            <p>Mes écrits s'inspirent des grandes œuvres de la littérature médiévale tout en incorporant des éléments de fantasy moderne. J'accorde une attention particulière à l'authenticité historique des décors et des coutumes, tout en laissant place au merveilleux et à l'imaginaire. Mon style privilégie les descriptions immersives et les dialogues authentiques qui donnent vie aux personnages.</p>
+        </section>
+    </main>
 
-            <!-- Extrait Nouvelle 2 -->
-            <div class="excerpt-content" id="nouvelle2">
-                <div class="excerpt-header">
-                    <h2 class="excerpt-title">Lettres à l'Inconnue</h2>
-                    <p class="excerpt-info">Romance contemporaine - Avant-première</p>
-                </div>
-                
-                <div class="excerpt-text">
-                    "Chère inconnue du café,
-                    
-                    Cela fait trois semaines que je vous observe de loin, toujours à la même table, toujours avec le même livre que vous ne semblez jamais finir. Aujourd'hui, j'ai trouvé le courage de vous écrire cette lettre que je n'oserai probablement jamais vous donner.
-                    
-                    Vous souriez en lisant, et ce sourire illumine toute la salle. Je me demande ce qui vous rend si heureuse..."
-                </div>
-                
-                <div class="excerpt-footer">
-                    <div class="excerpt-stats">
-                        📊 Extrait de 95 mots | 💕 Genre : Romance
-                    </div>
-                    <a href="#" class="read-more-btn">Lire la lettre complète</a>
-                </div>
-            </div>
-
-            <div class="teaser-section">
-                <h3 class="teaser-title">🔔 Ne ratez aucun extrait exclusif !</h3>
-                <p>Abonnez-vous à ma newsletter pour recevoir chaque semaine de nouveaux extraits inédits, des bonus et des nouvelles de mes projets en cours.</p>
-                
-                <div class="newsletter-signup">
-                    <input type="email" class="newsletter-input" placeholder="Votre adresse email" id="emailInput">
-                    <button class="newsletter-btn" onclick="subscribe()">S'abonner</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function showExcerpt(excerptId) {
-            // Cacher tous les extraits
-            const contents = document.querySelectorAll('.excerpt-content');
-            contents.forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            // Désactiver tous les boutons
-            const buttons = document.querySelectorAll('.excerpt-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Afficher l'extrait sélectionné
-            document.getElementById(excerptId).classList.add('active');
-            
-            // Activer le bouton correspondant
-            event.target.classList.add('active');
-        }
-
-        function subscribe() {
-            const email = document.getElementById('emailInput').value;
-            if (email && email.includes('@')) {
-                alert(`Merci ! Vous êtes maintenant abonné avec l'email : ${email}\n\nVous recevrez vos premiers extraits exclusifs dès la semaine prochaine ! 📚`);
-                document.getElementById('emailInput').value = '';
-            } else {
-                alert('Veuillez entrer une adresse email valide.');
-            }
-        }
-
-        // Effet de frappe pour le badge exclusif
-        let badgeText = '✨ EXCLUSIF';
-        let badgeIndex = 0;
-        let isTyping = true;
-
-        function typewriterEffect() {
-            const badge = document.querySelector('.exclusive-badge');
-            
-            if (isTyping) {
-                badge.textContent = badgeText.substring(0, badgeIndex);
-                badgeIndex++;
-                
-                if (badgeIndex > badgeText.length) {
-                    isTyping = false;
-                    setTimeout(() => {
-                        isTyping = true;
-                        badgeIndex = 0;
-                    }, 3000);
-                }
-            }
-        }
-
-        // Animation de comptage des statistiques
-        function animateStats() {
-            const stats = document.querySelectorAll('.excerpt-stats');
-            stats.forEach(stat => {
-                const text = stat.textContent;
-                const numbers = text.match(/\d+/g);
-                if (numbers) {
-                    numbers.forEach(num => {
-                        let current = 0;
-                        const target = parseInt(num);
-                        const increment = target / 50;
-                        
-                        const counter = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                current = target;
-                                clearInterval(counter);
-                            }
-                            stat.textContent = text.replace(num, Math.floor(current));
-                        }, 30);
-                    });
-                }
-            });
-        }
-
-        // Démarrer les animations au chargement
-        window.addEventListener('load', () => {
-            setTimeout(animateStats, 1000);
-        });
-
-        // Effet de parallaxe subtil
-        document.addEventListener('mousemove', (e) => {
-            const container = document.querySelector('.excerpts-container');
-            const mouseX = e.clientX / window.innerWidth;
-            const mouseY = e.clientY / window.innerHeight;
-            
-            const moveX = (mouseX - 0.5) * 10;
-            const moveY = (mouseY - 0.5) * 10;
-            
-            container.style.transform = `translate(${moveX}px, ${moveY}px)`;
-        });
-    </script>
+    <footer>
+        <p>&copy; 2025 Univers Littéraire Médiéval. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
+
