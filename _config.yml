@@ -1,6 +1,6 @@
 title: "Wiki Médiéval de JillianHT"
 description: "Chroniques d'un monde médiéval-fantastique"
-theme: minima
+remote_theme: pages-themes/slate@v0.2.0
 
 # Navigation
 header_pages:
@@ -11,3 +11,5 @@ header_pages:
 # Configuration
 markdown: kramdown
 highlighter: rouge
+plugins:
+  - jekyll-remote-theme
