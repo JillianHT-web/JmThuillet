@@ -1,3 +1,12 @@
+---
+layout: default
+title: Personnages
+---
+
+[← Retour à l'accueil](index.md) | [Lieux](lieux.md) | [Chronologie](chronologie.md)
+
+---
+
 # Lieux du Royaume
 
 ## Royaume de Valeria
