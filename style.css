@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=MedievalSharp&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/0/0d/Medieval_Parchement.jpg') repeat;
+  font-family: 'MedievalSharp', 'Georgia', serif;
+  color: #4A2E0B;
+}
+
+header .bandeau {
+  background: linear-gradient(90deg, #d4b483, #bfa45a 60%, #d4b483);
+  padding: 1.5em 0 1em 0;
+  text-align: center;
+  box-shadow: 0 4px 10px #bfa45a88;
+}
+
+header h1 {
+  margin: 0;
+  font-family: 'UnifrakturCook', 'MedievalSharp', serif;
+  font-size: 2.5em;
+  color: #7a542e;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px #fff3d6, 0 0 8px #d4b483;
+}
+
+nav ul {
+  margin: 1em 0 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+nav a {
+  font-family: 'MedievalSharp', serif;
+  color: #4A2E0B;
+  text-decoration: none;
+  font-size: 1.15em;
+  padding: 0.3em 0.7em;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+nav a:hover, nav a:focus {
+  background: #e7d4ac;
+  color: #7a542e;
+}
+
+main {
+  max-width: 900px;
+  margin: 2em auto;
+  background: rgba(255,248,220,0.92);
+  border-radius: 12px;
+  padding: 2em;
+  box-shadow: 0 0 30px #bfa45a33;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+h2 {
+  font-family: 'UnifrakturCook', 'MedievalSharp', serif;
+  color: #7a542e;
+  border-bottom: 2px solid #bfa45a;
+  padding-bottom: 0.3em;
+  margin-bottom: 1em;
+}
+
+.oeuvre-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5em;
+}
+
+.oeuvre-list article {
+  background: #fffaf2;
+  border-radius: 10px;
+  padding: 1em;
+  border: 2px solid #d4b483;
+  box-shadow: 0 2px 8px #bfa45a22;
+}
+
+.oeuvre-list h3 {
+  margin-top: 0;
+  font-family: 'UnifrakturCook', 'MedievalSharp', serif;
+  color: #8c5e28;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: #bfa45a;
+  color: #4A2E0B;
+  font-size: 0.95em;
+  border-top: 2px solid #7a542e;
+  margin-top: 2em;
+  letter-spacing: 1px;
+}
