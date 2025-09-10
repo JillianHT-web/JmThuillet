@@ -3,6 +3,10 @@ layout: default
 title: Chronologie
 ---
 
+[← Retour à l'accueil](index.md) | [Lieux](lieux.md) | [Personnage](personnages.md)
+
+---
+
 # Chronologie des Terres de Valeria
 
 ## Âge des Fondations (An 0 - 300)
