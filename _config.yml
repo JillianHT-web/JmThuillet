@@ -1,7 +1,7 @@
 # Site settings
 title: Plumes et Rêves
 email: 
-description: > # this means to ignore newlines until "baseurl:"
+description: SIte de présentation de mes oeuvres litéraires.# this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://jillianht-web.github.io/JmThuillet/" # the base hostname & protocol for your site
 
